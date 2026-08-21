@@ -4,6 +4,7 @@ import { getFocusPageData } from "@/services/focus.service";
 import { FocusTimerCard } from "@/components/focus/FocusTimerCard";
 import { StudyStatsCards } from "@/components/focus/StudyStatsCards";
 import { WeeklyChart } from "@/components/focus/WeeklyChart";
+import { ChillHub } from "@/components/focus/ChillHub";
 
 export const metadata: Metadata = { title: "Focus — StudentHub" };
 
@@ -33,7 +34,10 @@ export default async function FocusPage() {
         </p>
       </div>
 
+      {/* Timer now embeds Pomodoro presets (configurable focus/break/longBreak) — legacy-integrated, auto-pause on edit. */}
       <FocusTimerCard courses={data.courses} openTasks={data.openTasks} />
+
+      <ChillHub />
 
       <StudyStatsCards stats={data.stats} />
 

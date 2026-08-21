@@ -19,6 +19,13 @@ export interface LogSessionInput {
 
 export const focusClientService = {
   async logSession(input: LogSessionInput): Promise<ApiResult> {
+    // Validate payload before hitting Supabase — prevents DB check violations and confusing errors.
+    if (!Number.isFinite(input.durationSeconds) || input.durationSeconds <= 0) {
+      return fail("Invalid session duration.");
+    }
+    if (input.kind !== "focus" && input.kind !== "break") {
+      return fail("Invalid session kind.");
+    }
     const supabase = createClient();
     const {
       data: { user },

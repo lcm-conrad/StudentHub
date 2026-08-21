@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { getDeadlineRadarData } from "@/services/planner.service";
 import { DeadlineRadarView } from "@/components/schedule/DeadlineRadar";
+import { CalendarShell } from "@/components/calendar/CalendarShell";
 
 export const metadata: Metadata = { title: "Schedule — StudentHub" };
 
@@ -29,6 +30,7 @@ export default async function SchedulePage() {
           Spot deadline pile-ups weeks before they hit — never get blindsided again.
         </p>
       </div>
+      <CalendarShell />
       <DeadlineRadarView radar={radar} />
     </div>
   );

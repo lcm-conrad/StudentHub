@@ -37,7 +37,7 @@ export function hasRole(role: UserRole, required: UserRole): boolean {
  * allowed to view them. More-specific (longer) prefixes win.
  */
 export const ROUTE_ROLES: Array<{ prefix: string; roles: UserRole[] }> = [
-  { prefix: "/dashboard/students", roles: ["teacher", "admin"] },
+  // No staff-only routes currently — student area is open to all authenticated roles.
 ];
 
 /** Returns the roles required for `path`, or null if the path is open. */

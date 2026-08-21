@@ -5,13 +5,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  Award,
+  BarChart3,
   BookOpen,
   CalendarDays,
+  FileText,
+  Heart,
   LayoutDashboard,
   ListTodo,
   Settings,
   Timer,
-  Users,
   X,
 } from "lucide-react";
 import { cn } from "@/utils/cn";
@@ -21,7 +24,10 @@ const NAV_ITEMS = [
   { label: "Courses", href: "/dashboard/courses", icon: BookOpen },
   { label: "Schedule", href: "/dashboard/schedule", icon: CalendarDays },
   { label: "Tasks", href: "/dashboard/tasks", icon: ListTodo },
-  { label: "Students", href: "/dashboard/students", icon: Users },
+  { label: "Notes", href: "/dashboard/notes", icon: FileText },
+  { label: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
+  { label: "Wellness", href: "/dashboard/wellness", icon: Heart },
+  { label: "Achievements", href: "/dashboard/achievements", icon: Award },
   { label: "Focus", href: "/dashboard/focus", icon: Timer },
   { label: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
